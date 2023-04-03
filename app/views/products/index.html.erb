@@ -5,6 +5,7 @@
 <table>
   <thead>
     <tr>
+      <th>ID</th>
       <th>Nome</th>
       <th>Preço</th>
       <th>Criado em</th>
@@ -16,6 +17,7 @@
   <tbody>
     <% @products.each do |product| %>
       <tr>
+        <td><%= product.id %></td>
         <td><%= product.name %></td>
         <td><%= product.price %></td>
         <td><%= datahora_br(product.created_at) %></td>
@@ -31,3 +33,4 @@
 <br>
 
 <%= link_to 'Novo produto', new_product_path %>
+<%= link_to 'Menu', root_path %>

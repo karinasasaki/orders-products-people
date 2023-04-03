@@ -16,6 +16,16 @@
     <%= form.text_field :name %>
   </div>
 
+  <div class="field">
+    <%= form.label :person %>
+    <%= form.collection_select(:person_id, @set_person_options, :id, :name) %>
+  </div>
+
+  <div class="field">
+    <%= form.label :product %>
+    <%= form.collection_check_boxes(:product_id, @set_product_options, :id, :name) %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>

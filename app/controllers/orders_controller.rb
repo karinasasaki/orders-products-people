@@ -1,5 +1,7 @@
 class OrdersController < ApplicationController
   before_action :set_order, only: %i[ show edit update destroy ]
+  before_action :set_product_options, only: [:new, :create, :edit, :update]
+  before_action :set_person_options, only: [:new, :create, :edit, :update]
 
   # GET /orders or /orders.json
   def index
@@ -58,6 +60,14 @@ class OrdersController < ApplicationController
   end
 
   private
+    def set_person_options
+      @set_person_options = Person.all
+    end
+
+    def set_product_options
+      @set_product_options = Product.all
+    end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_order
       @order = Order.find(params[:id])
@@ -65,6 +75,6 @@ class OrdersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def order_params
-      params.require(:order).permit(:name)
+      params.require(:order).permit(:name, :person_id, :product_id)
     end
 end
