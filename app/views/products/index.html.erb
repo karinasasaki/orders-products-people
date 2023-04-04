@@ -1,15 +1,16 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Produtos</h1>
+<h1><h1><%= @products.model_name.human(count: 2) %></h1>
+</h1>
 
 <table>
   <thead>
     <tr>
-      <th>ID</th>
-      <th>Nome</th>
-      <th>Preço</th>
-      <th>Criado em</th>
-      <th>Atualizado em</th>
+      <th><%= @products.human_attribute_name(:id) %></th>
+      <th><%= @products.human_attribute_name(:name) %></th>
+      <th><%= @products.human_attribute_name(:price) %></th>
+      <th><%= @products.human_attribute_name(:created_at) %></th>
+      <th><%= @products.human_attribute_name(:updated_at) %></th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -22,9 +23,9 @@
         <td><%= product.price %></td>
         <td><%= datahora_br(product.created_at) %></td>
         <td><%= datahora_br(product.updated_at) %></td>
-        <td><%= link_to 'Mostrar', product %></td>
-        <td><%= link_to 'Editar', edit_product_path(product) %></td>
-        <td><%= link_to 'Apagar', product, method: :delete, data: { confirm: 'Tem certeza?' } %></td>
+        <td><%= link_to t('links.show'), product %></td>
+        <td><%= link_to t('links.edit'), edit_product_path(product) %></td>
+        <td><%= link_to t('links.delete'), product, method: :delete, data: { confirm: t('sure') } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -32,5 +33,5 @@
 
 <br>
 
-<%= link_to 'Novo produto', new_product_path %>
+<%= link_to t('new.product'), new_product_path %>
 <%= link_to 'Menu', root_path %>

@@ -1,0 +1,15 @@
+pt-BR:
+  language: "Português do Brasil"
+  title: "Produtos"
+
+  links: 
+    edit: "Editar"
+    show: "Mostrar"
+    delete: "Apagar"
+
+  sure: "Tem certeza?"
+
+  new:
+    order: "Novo pedido"
+    product: "Novo produto"
+    person: "Nova pessoa"

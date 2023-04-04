@@ -1,16 +1,16 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Orders</h1>
+<h1><%= @orders.model_name.human(count: 2) %></h1>
 
 <table>
   <thead>
     <tr>
-      <th>ID da compra</th>
-      <th>Name</th>
-      <th>Criado em</th>
-      <th>Atualizado em</th>
-      <th>Pessoa</th>
-      <th>Produtos</th>
+      <th><%= @orders.human_attribute_name(:id) %></th>
+      <th><%= @orders.human_attribute_name(:name) %></th>
+      <th><%= @orders.human_attribute_name(:created_at) %></th>
+      <th><%= @orders.human_attribute_name(:updated_at) %></th>
+      <th><%= @orders.human_attribute_name(:person) %></th>
+      <th><%= @orders.human_attribute_name(:product) %></th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -24,9 +24,9 @@
         <td><%= datahora_br(order.updated_at) %></td>
         <td><%= order.person.name %></td>
         <td><%= order.product_id %></td>
-        <td><%= link_to 'Show', order %></td>
-        <td><%= link_to 'Edit', edit_order_path(order) %></td>
-        <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to t('links.show'), order %></td>
+        <td><%= link_to t('links.edit'), edit_order_path(order) %></td>
+        <td><%= link_to t('links.delete'), order, method: :delete, data: { confirm: t('sure') } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -34,5 +34,5 @@
 
 <br>
 
-<%= link_to 'New Order', new_order_path %>
+<%= link_to t('new.order'), new_order_path %>
 <%= link_to 'Menu', root_path %>

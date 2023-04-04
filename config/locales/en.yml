@@ -30,4 +30,17 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  language: "English (International)"
+  title: "Products"
+
+  links: 
+    edit: "Edit"
+    show: "Show"
+    delete: "Delete"
+
+  sure: "Are you sure?"
+
+  new:
+    order: "New order"
+    product: "New product"
+    person: "New person"

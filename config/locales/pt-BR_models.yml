@@ -1,0 +1,35 @@
+'pt-BR':
+  activerecord:
+    models:
+      product:
+        one: Produto
+        other: Produtos
+      order:
+        one: Pedido
+        other: Pedidos
+      person:
+        one: Pessoa
+        other: Pessoas
+    attributes:
+      product:
+        id: Código do produto
+        name: Nome
+        price: Preço
+        updated_at: Atualizado em
+        created_at: Criado em
+      order:
+        id: Código da compra
+        name: Nome do pedido
+        updated_at: Atualizado em
+        created_at: Criado em
+        product: Produto
+        person: Pessoa
+        product_id: ID do produto
+        person_id: ID da pessoa
+      person:
+        id: Código da pessoa
+        name: Nome
+        updated_at: Atualizado em
+        created_at: Criado em
+
+      # will translate User attribute "login" as "Handle"
