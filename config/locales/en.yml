@@ -44,3 +44,17 @@ en:
     order: "New order"
     product: "New product"
     person: "New person"
+
+  notice:
+    order:
+      created: "Order was successfully created."
+      updated: "Order was successfully updated."
+      destroyed: "Order was successfully destroyed."
+    person:
+      created: "Person was successfully created."
+      updated: "Person was successfully updated."
+      destroyed: "Person was successfully destroyed."
+    product:
+      created: "Product was successfully created."
+      updated: "Product was successfully updated."
+      destroyed: "Product was successfully destroyed."

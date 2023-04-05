@@ -1,3 +1,5 @@
 class Person < ApplicationRecord
-  has_many :orders
+  has_many :orders, dependent: :destroy
+
+  has_many :products, through: :orders
 end

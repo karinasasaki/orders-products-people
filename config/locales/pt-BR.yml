@@ -13,3 +13,17 @@ pt-BR:
     order: "Novo pedido"
     product: "Novo produto"
     person: "Nova pessoa"
+
+  notice:
+    order:
+      created: "Pedido criado com sucesso."
+      updated: "Pedido atualizado com sucesso."
+      destroyed: "Pedido apagado com sucesso."
+    person:
+      created: "Pessoa criada com sucesso."
+      updated: "Pessoa atualizada com sucesso."
+      destroyed: "Pessoa apagada com sucesso."
+    product:
+      created: "Produto criado com sucesso."
+      updated: "Produto atualizado com sucesso."
+      destroyed: "Produto apagado com sucesso."
