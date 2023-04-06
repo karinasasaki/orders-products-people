@@ -1,5 +1,15 @@
 {
   "name": "desafio_03",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "bootstrap": "^5.2.3",
+    "jquery": "^3.6.4",
+    "notify-js-legacy": "^0.4.1",
+    "popper.js": "^1.16.1"
+  },
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/karinasasaki/desafio-03",
+  "author": "karinasasaki <karinasasaki@github.com>",
+  "license": "MIT"
 }

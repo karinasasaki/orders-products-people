@@ -2,13 +2,17 @@
 
 <h1><%= @products.model_name.human(count: 2) %></h1>
 
-<%#
+<%
   if @products.empty?
-    flash[:notice] = "Popule o estoque com o comando db:seed!"
+    flash.notice = "Popule o estoque com o comando db:seed!"
   end
 %>
 
-<table>
+<script>
+//  $.notify('Popule o mercado com o comando db:seed', 'info')
+</script>
+
+<table class="table table-hover">
   <thead>
     <tr>
       <th><%= @products.human_attribute_name(:id) %></th>
