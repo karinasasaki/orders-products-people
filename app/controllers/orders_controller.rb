@@ -27,6 +27,16 @@ class OrdersController < ApplicationController
 
     respond_to do |format|
       if @order.save
+        product_list = params["order"]["product_ids"]
+        i = 0
+        until i == product_list.length
+          i += 1
+          products_orders = OrderDetail.new
+          products_orders.order_id = @order.id
+          products_orders.product_id = product_list[i]
+          products_orders.save
+        end
+        
         format.html { redirect_to order_url(@order), notice: t('notice.order.created') }
         format.json { render :show, status: :created, location: @order }
       else
