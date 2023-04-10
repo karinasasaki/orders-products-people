@@ -10,6 +10,9 @@
       person:
         one: Pessoa
         other: Pessoas
+      order_detail:
+        one: Detalhe do pedido
+        other: Detalhes dos pedidos
     attributes:
       product:
         id: Código do produto
@@ -30,6 +33,13 @@
       person:
         id: Código da pessoa
         name: Nome
+        updated_at: Atualizado em
+        created_at: Criado em
+      order_detail:
+        id: Código
+        order_id: Código da compra
+        product_id: Código do produto
+        quantity: Quantidade
         updated_at: Atualizado em
         created_at: Criado em
 

@@ -1,27 +1,12 @@
 <div class="jumbotron">
-  <h1 class="display-4">Seja bem-vindo</h1>
-  <p class="lead">Aqui estão os produtos</p>
+  <h1 class="display-4"><%= t('welcome.title') %></h1>
+  <p class="lead"><%= t('welcome.description') %></p>
   <hr class="my-4">
-  <p>Selecione:</p>
-  <a class="btn btn-primary btn-lg" href="/orders" role="button">Cadastro de pedidos</a>
-  <a class="btn btn-primary btn-lg" href="/products" role="button">Cadastro de produtos</a>
-  <a class="btn btn-primary btn-lg" href="/people" role="button">Cadastro de pessoas</a>
-  <a class="btn btn-primary btn-lg" href="/order_details" role="button">Order Details</a>
+
+  <p><%= t('welcome.select') %>:</p>
+  <%= link_to "#{Order.model_name.human(count: 2)}",  orders_path, class:"btn btn-primary btn-sm", role:"button" %>
+  <%= link_to "#{Product.model_name.human(count: 2)}",  products_path, class:"btn btn-primary btn-sm", role:"button" %>
+  <%= link_to "#{Person.model_name.human(count: 2)}",  people_path, class:"btn btn-primary btn-sm", role:"button" %>
+  <br><br>
+  <%= link_to "#{OrderDetail.model_name.human(count: 2)}",  order_details_path, class:"btn btn-primary btn-sm", role:"button" %>
 </div>
-
-<p>
-  <%= link_to "Português", root_path(locale: 'pt-BR') %>
-</p>
-<p>
-  <%= link_to "English", root_path(locale: 'en') %>
-</p>
-
-<p>O idioma usado nessa aplicação é: <%= t('language') %></p>
-<p><strong>Data:</strong> <%= l(Date.today) %></p>
-
-<ul>
-  <li><%= link_to "",  orders_path %></li>
-  <li><%= link_to "",  products_path %></li>
-  <li><%= link_to "",  people_path %></li>
-  <li><%= link_to "",  order_details_path %></li>
-</ul>

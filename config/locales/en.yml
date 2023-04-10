@@ -30,6 +30,11 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  welcome:
+    title: "Welcome"
+    description: "Challenge 3 CRUD"
+    select: "Choose"
+
   language: "English (International)"
   title: "Products"
 

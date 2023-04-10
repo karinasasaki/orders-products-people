@@ -1,4 +1,9 @@
 pt-BR:
+  welcome:
+    title: "Seja bem-vindo(a)"
+    description: "CRUD do Desafio 3"
+    select: "Selecione"
+  
   language: "Português do Brasil"
   title: "Produtos"
 
