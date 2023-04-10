@@ -1,0 +1,8 @@
+<div class='nested-fields'>
+  <div class='field'>
+    <%= f.label :product %>
+    <%= f.collection_select(:product_id, @set_product_options, :id, :name) %>
+  </div>
+
+  <%= link_to_remove_association 'remove order_detail', f%>
+</div>

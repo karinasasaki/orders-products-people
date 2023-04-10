@@ -15,6 +15,7 @@ class OrdersController < ApplicationController
   # GET /orders/new
   def new
     @order = Order.new
+    @order_detail = @order.order_details.build
   end
 
   # GET /orders/1/edit
@@ -26,17 +27,7 @@ class OrdersController < ApplicationController
     @order = Order.new(order_params)
 
     respond_to do |format|
-      if @order.save
-        product_list = params["order"]["product_ids"]
-        i = 0
-        until i == product_list.length
-          i += 1
-          products_orders = OrderDetail.new
-          products_orders.order_id = @order.id
-          products_orders.product_id = product_list[i]
-          products_orders.save
-        end
-        
+      if @order.save        
         format.html { redirect_to order_url(@order), notice: t('notice.order.created') }
         format.json { render :show, status: :created, location: @order }
       else
@@ -85,6 +76,6 @@ class OrdersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def order_params
-      params.require(:order).permit(:name, :person_id, :product_id)
+      params.require(:order).permit(:name, :person_id, :product_id, order_details_attributes: [:id, :product_id, :order_id, :_destroy])
     end
 end

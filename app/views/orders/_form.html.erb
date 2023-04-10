@@ -4,9 +4,9 @@
       <h2><%= pluralize(order.errors.count, "error") %> prohibited this order from being saved:</h2>
 
       <ul>
-      <% order.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+        <% order.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
@@ -22,8 +22,20 @@
   </div>
 
   <div class="field">
-    <%= form.label :product %>
-    <%= form.collection_check_boxes(:product_ids, @set_product_options, :id, :name) %>
+    <%# form.label :product %>
+    <%# form.collection_check_boxes(:product_ids, @set_product_options, :id, :name) %>
+  </div>
+
+  Produtos:
+
+  <div id='order_details'>
+    <%= form.fields_for :order_details do |order_details_form|%>
+      <%= render 'order_detail_fields', f: order_details_form %>
+    <% end %>
+
+    <div class='links'>
+      <%= link_to_add_association 'add order_detail', form, :order_details %>
+    </div>
   </div>
 
   <div class="actions">
