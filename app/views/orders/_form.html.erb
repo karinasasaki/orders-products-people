@@ -21,11 +21,6 @@
     <%= form.collection_select(:person_id, @set_person_options, :id, :name) %>
   </div>
 
-  <div class="field">
-    <%# form.label :product %>
-    <%# form.collection_check_boxes(:product_ids, @set_product_options, :id, :name) %>
-  </div>
-
   Produtos:
 
   <div id='order_details'>
@@ -34,7 +29,7 @@
     <% end %>
 
     <div class='links'>
-      <%= link_to_add_association 'add order_detail', form, :order_details %>
+      <%= link_to_add_association t('order.add'), form, :order_details %>
     </div>
   </div>
 

@@ -1,4 +1,9 @@
 pt-BR:
+  order:
+    edit: "Editando pedido"
+    add: "Adicionar produto"
+    remove: "Remover produto"
+
   welcome:
     title: "Seja bem-vindo(a)"
     description: "CRUD do Desafio 3"
@@ -32,3 +37,4 @@ pt-BR:
       created: "Produto criado com sucesso."
       updated: "Produto atualizado com sucesso."
       destroyed: "Produto apagado com sucesso."
+      seed: "Popule o estoque com o comando db:seed!"

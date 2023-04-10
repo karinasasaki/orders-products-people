@@ -1,8 +1,23 @@
-<p id="notice"><%= notice %></p>
+<span style="color:green" ><%= notice %></span>
 
 <p>
+  <strong>ID: </strong>
+  <%= @order.id %>
+  <br>
   <strong>Name:</strong>
   <%= @order.name %>
+  <br>
+  <strong><%= Order.human_attribute_name(:created_at) %>:</strong>
+  <%= datahora_br(@order.created_at) %>
+  <br>
+  <strong><%= Order.human_attribute_name(:updated_at) %>:</strong>
+  <%= datahora_br(@order.updated_at) %>
+  <br>
+  <strong>Comprador:</strong>
+  <%= @order.person.name %>
+  <br>
+  <strong>Produtos comprados:</strong>
+  <%= @order.products.ids %>
 </p>
 
 <%= link_to 'Edit', edit_order_path(@order) %> |

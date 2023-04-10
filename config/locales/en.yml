@@ -30,6 +30,11 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  order:
+    edit: "Editing order"
+    add: "Add product"
+    remove: "Remove product"
+
   welcome:
     title: "Welcome"
     description: "Challenge 3 CRUD"
@@ -63,3 +68,4 @@ en:
       created: "Product was successfully created."
       updated: "Product was successfully updated."
       destroyed: "Product was successfully destroyed."
+      seed: "Populate the stock with the db:seed command!"

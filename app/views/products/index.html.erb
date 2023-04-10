@@ -1,10 +1,11 @@
-<p id="notice"><%= notice %></p>
+<span style="color:green" ><%= notice %></span>
+<span style="color:red"><%= alert %></span>
 
-<h1><%= @products.model_name.human(count: 2) %></h1>
+<h1><%= Product.model_name.human(count: 2) %></h1>
 
 <%
   if @products.empty?
-    flash.notice = "Popule o estoque com o comando db:seed!"
+    flash.alert = t('notice.product.seed')
   end
 %>
 
@@ -15,11 +16,11 @@
 <table class="table table-hover">
   <thead>
     <tr>
-      <th><%= @products.human_attribute_name(:id) %></th>
-      <th><%= @products.human_attribute_name(:name) %></th>
-      <th><%= @products.human_attribute_name(:price) %></th>
-      <th><%= @products.human_attribute_name(:created_at) %></th>
-      <th><%= @products.human_attribute_name(:updated_at) %></th>
+      <th><%= Product.human_attribute_name(:id) %></th>
+      <th><%= Product.human_attribute_name(:name) %></th>
+      <th><%= Product.human_attribute_name(:price) %></th>
+      <th><%= Product.human_attribute_name(:created_at) %></th>
+      <th><%= Product.human_attribute_name(:updated_at) %></th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -42,5 +43,5 @@
 
 <br>
 
-<%= link_to t('new.product'), new_product_path %>
-<%= link_to 'Menu', root_path %>
+<%= link_to t('new.product'), new_product_path, class:"btn btn-primary" %>
+<%= link_to 'Menu', root_path, class:"btn btn-outline-primary" %>
