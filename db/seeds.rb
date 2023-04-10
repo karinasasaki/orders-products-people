@@ -22,3 +22,15 @@ products.each do |product|
 end
 
 puts "Produtos cadastrados com sucesso!"
+
+puts "Cadastrando pessoas..."
+
+people = [
+  { name: "Karina Sasaki"}
+]
+
+people.each do |person|
+  Person.find_or_create_by!(person)
+end
+
+puts "Pessoas cadastradas com sucesso!"
