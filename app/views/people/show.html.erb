@@ -1,8 +1,22 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+  <strong>Código: </strong>
+  <%= @person.id %>
+  <br>
+  <strong>Name: </strong>
   <%= @person.name %>
+  <br>
+  <strong>Criado em: </strong>
+  <%= datahora_br(@person.created_at) %>
+  <br>
+  <strong>Atualizado em: </strong>
+  <%= datahora_br(@person.updated_at) %>
+</p>
+
+<p>
+  <strong>Compras realizadas: </strong>
+  <%= @person.order_ids %>
 </p>
 
 <%= link_to 'Edit', edit_person_path(@person) %> |

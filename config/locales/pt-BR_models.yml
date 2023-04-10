@@ -23,7 +23,8 @@
         updated_at: Atualizado em
         created_at: Criado em
         product: Produto
-        person: Pessoa
+        products: Produtos comprados
+        person: Comprador(a)
         product_id: ID do produto
         person_id: ID da pessoa
       person:
