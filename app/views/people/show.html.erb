@@ -1,22 +1,23 @@
 <span style="color:green" ><%= notice %></span>
 
 <p>
-  <strong>Código: </strong>
+  <strong><%= Person.human_attribute_name(:id) %>: </strong>
   <%= @person.id %>
   <br>
-  <strong>Name: </strong>
+  <strong><%= Person.human_attribute_name(:name) %>: </strong>
   <%= @person.name %>
   <br>
-  <strong>Criado em: </strong>
+  <strong><%= Person.human_attribute_name(:created_at) %>: </strong>
   <%= datahora_br(@person.created_at) %>
   <br>
-  <strong>Atualizado em: </strong>
+  <strong><%= Person.human_attribute_name(:updated_at) %>: </strong>
   <%= datahora_br(@person.updated_at) %>
 </p>
 
 <p>
-  <strong>Compras realizadas: </strong>
-  <%= @person.order_ids %>
+  <strong><%= Order.human_attribute_name(:id) %>: </strong>
+  <%= @person.products.pluck(:name).join(", ") %>
+  <%= @person.orders.pluck(:name) %>
 </p>
 
 <%= link_to t('links.edit'), edit_person_path(@person), class:"btn btn-primary"  %>
