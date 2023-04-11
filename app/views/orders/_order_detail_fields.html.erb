@@ -1,13 +1,21 @@
-<div class='nested-fields'>
-  <div class='field' style='display:inline'>
-    <%= f.label :product %>
-    <%= f.collection_select(:product_id, @set_product_options, :id, :name, class:"form-select") %>
-  </div>
 
-  <div class="mb-3" style='display:inline'>
+<div class="container nested-fields">
+  <div class="row">
+    <div class="col-9">
+      <div class='field' style='display:inline'>
+    <%= f.label :product %>
+    <%= f.collection_select(:product_id, @set_product_options, :id, :name,{include_blank: false}, {class: "form-select"}) %>
+  </div>
+    </div>
+    <div class="col-2">
+      <div class="mb-3" style='display:inline'>
     <%= f.label :quantity %>
     <%= f.number_field :quantity, class:"form-control"  %>
   </div>
 
-  <%= link_to_remove_association t('order.remove'), f%>
+    </div>
+    <div class="col-1">
+      <%= link_to_remove_association t('order.remove'), f%>
+    </div>
+  </div>
 </div>
