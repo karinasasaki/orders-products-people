@@ -1,6 +1,6 @@
-<h1>Editing Person</h1>
+<h1><%= t('person.edit') %></h1>
 
 <%= render 'form', person: @person %>
 
-<%= link_to 'Show', @person %> |
-<%= link_to 'Back', people_path %>
+<%= link_to t('links.show'), @person, class:"btn btn-primary"  %>
+<%= link_to t('links.back'), people_path, class:"btn btn-outline-primary"  %>

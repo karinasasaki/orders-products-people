@@ -9,17 +9,30 @@
       <th><%= Order.human_attribute_name(:name) %></th>
       <th><%= Order.human_attribute_name(:person) %></th>
       <th><%= Order.human_attribute_name(:products) %></th>
+      <th><%= t('total_value') %></th>
       <th colspan="3"></th>
     </tr>
   </thead>
 
+
   <tbody>
     <% @orders.each do |order| %>
+
+    <% prices = order.products.pluck(:price) %>
+    <% quantities = order.products.pluck(:quantity) %>
+    <% i = 0; total_value = 0
+      until i == (prices.length)
+        total_value += (prices[i]*quantities[i])
+        i += 1
+      end
+    %>
+
       <tr>
         <td><%= order.id %></td>
         <td><%= order.name %></td>
         <td><%= order.person.name %></td>
-        <td><%= order.products.ids %></td>
+        <td><%= order.products.pluck(:name)[0..2].join(', ') %></td>
+        <td>R$ <%= total_value %></td>
         <td><%= link_to t('links.show'), order %></td>
         <td><%= link_to t('links.edit'), edit_order_path(order) %></td>
         <td><%= link_to t('links.delete'), order, method: :delete, data: { confirm: t('sure') } %></td>

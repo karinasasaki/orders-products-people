@@ -1,14 +1,19 @@
 <span style="color:green" ><%= notice %></span>
 
 <p>
-  <strong>Name:</strong>
+  <strong><%= Product.human_attribute_name(:name) %>: </strong>
   <%= @product.name %>
+  <br>
+  <strong><%= Product.human_attribute_name(:price) %>: </strong>
+  R$ <%= @product.price %>
+  <br>
+  <strong><%= Product.human_attribute_name(:created_at) %>: </strong>
+  <%= datahora_br(@product.created_at) %>
+  <br>
+  <strong><%= Product.human_attribute_name(:updated_at) %>: </strong>
+  <%= datahora_br(@product.updated_at) %>
+  <br>
 </p>
 
-<p>
-  <strong>Price:</strong>
-  <%= @product.price %>
-</p>
-
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path %>
+<%= link_to t('links.edit'), edit_product_path(@product), class:"btn btn-primary"  %>
+<%= link_to t('links.back'), products_path, class:"btn btn-outline-primary"  %>

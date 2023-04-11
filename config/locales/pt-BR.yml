@@ -1,8 +1,22 @@
 pt-BR:
+  order_detail:
+    edit: "Editando"
+    title: "Tabela Pedidos-Produtos"
+
   order:
     edit: "Editando pedido"
     add: "Adicionar produto"
     remove: "Remover produto"
+    details: "Detalhes do pedido"
+    new: "Novo pedido"
+
+  person:
+    new: "Nova pessoa"
+    edit: "Editando pessoa"
+
+  product:
+    new: "Novo produto"
+    edit: "Editando produto"
 
   welcome:
     title: "Seja bem-vindo(a)"
@@ -11,11 +25,15 @@ pt-BR:
   
   language: "Português do Brasil"
   title: "Produtos"
+  error: "Erro ao salvar"
+  total_value: "Valor total"
+
 
   links: 
     edit: "Editar"
     show: "Mostrar"
     delete: "Apagar"
+    back: "Voltar"
 
   sure: "Tem certeza?"
 
@@ -30,7 +48,7 @@ pt-BR:
       updated: "Pedido atualizado com sucesso."
       destroyed: "Pedido apagado com sucesso."
     person:
-      created: "Pessoa criada com sucesso."
+      created: "Pessoa cadastrada com sucesso."
       updated: "Pessoa atualizada com sucesso."
       destroyed: "Pessoa apagada com sucesso."
     product:

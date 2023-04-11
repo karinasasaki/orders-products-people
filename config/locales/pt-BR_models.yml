@@ -17,7 +17,7 @@
       product:
         id: Código do produto
         name: Nome
-        price: Preço
+        price: Preço unitário
         updated_at: Atualizado em
         created_at: Criado em
       order:
@@ -37,10 +37,13 @@
         created_at: Criado em
       order_detail:
         id: Código
-        order_id: Código da compra
+        order_id: Código do pedido
         product_id: Código do produto
         quantity: Quantidade
         updated_at: Atualizado em
         created_at: Criado em
+        product: Produto
+      order_details:
+        quantity: Quantidade
 
       # will translate User attribute "login" as "Handle"

@@ -1,9 +1,9 @@
 <span style="color:green" ><%= notice %></span>
 
 <p>
-  <strong>Quantity:</strong>
+  <strong><%= OrderDetail.human_attribute_name(:quantity) %></strong>
   <%= @order_detail.quantity %>
 </p>
 
-<%= link_to 'Edit', edit_order_detail_path(@order_detail) %> |
-<%= link_to 'Back', order_details_path %>
+<%= link_to t('links.edit'), edit_order_detail_path(@order_detail), class:"btn btn-primary"  %> |
+<%= link_to t('links.back'), order_details_path %>

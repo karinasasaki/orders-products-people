@@ -19,5 +19,5 @@
   <%= @person.order_ids %>
 </p>
 
-<%= link_to 'Edit', edit_person_path(@person) %> |
-<%= link_to 'Back', people_path %>
+<%= link_to t('links.edit'), edit_person_path(@person), class:"btn btn-primary"  %>
+<%= link_to t('links.back'), people_path, class:"btn btn-outline-primary"   %>

@@ -4,4 +4,10 @@ class Order < ApplicationRecord
   accepts_nested_attributes_for :order_details, reject_if: :all_blank, allow_destroy: true
   
   belongs_to :person
+
+  validates :name, :person, presence: true
+
+  def value
+    @total_value
+  end
 end

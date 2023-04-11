@@ -1,5 +1,5 @@
-<h1>New Order Detail</h1>
+<h1><%= t('order_detail.new') %></h1>
 
 <%= render 'form', order_detail: @order_detail %>
 
-<%= link_to 'Back', order_details_path %>
+<%= link_to t('links.back'), order_details_path, class:"btn btn-outline-primary"  %>

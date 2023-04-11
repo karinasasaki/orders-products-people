@@ -1,24 +1,29 @@
 <span style="color:green" ><%= notice %></span>
 
+<h1><%= t('order.details') %></h1>
+
 <p>
-  <strong>ID: </strong>
+  <strong><%= Order.human_attribute_name(:id) %>: </strong>
   <%= @order.id %>
   <br>
-  <strong>Name:</strong>
+  <strong><%= Order.human_attribute_name(:name) %>: </strong>
   <%= @order.name %>
   <br>
-  <strong><%= Order.human_attribute_name(:created_at) %>:</strong>
+  <strong><%= Order.human_attribute_name(:created_at) %>: </strong>
   <%= datahora_br(@order.created_at) %>
   <br>
-  <strong><%= Order.human_attribute_name(:updated_at) %>:</strong>
+  <strong><%= Order.human_attribute_name(:updated_at) %>: </strong>
   <%= datahora_br(@order.updated_at) %>
   <br>
-  <strong>Comprador:</strong>
+  <strong><%= Order.human_attribute_name(:person) %>: </strong>
   <%= @order.person.name %>
   <br>
-  <strong>Produtos comprados:</strong>
-  <%= @order.products.ids %>
+  <strong><%= Order.human_attribute_name(:products) %>: </strong>
+  <%= @order.products.pluck(:quantity, :name).join(', ') %>
+  <br>
+  <strong><%= t('total_value') %>: </strong>
+  <%# total_value %>
 </p>
 
-<%= link_to 'Edit', edit_order_path(@order) %> |
-<%= link_to 'Back', orders_path %>
+<%= link_to t('links.edit'), edit_order_path(@order), class:"btn btn-primary"  %>
+<%= link_to t('links.back'), orders_path, class:"btn btn-outline-primary"  %>

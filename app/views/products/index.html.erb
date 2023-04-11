@@ -19,8 +19,6 @@
       <th><%= Product.human_attribute_name(:id) %></th>
       <th><%= Product.human_attribute_name(:name) %></th>
       <th><%= Product.human_attribute_name(:price) %></th>
-      <th><%= Product.human_attribute_name(:created_at) %></th>
-      <th><%= Product.human_attribute_name(:updated_at) %></th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -30,9 +28,7 @@
       <tr>
         <td><%= product.id %></td>
         <td><%= product.name %></td>
-        <td><%= product.price %></td>
-        <td><%= datahora_br(product.created_at) %></td>
-        <td><%= datahora_br(product.updated_at) %></td>
+        <td>R$ <%= product.price %></td>
         <td><%= link_to t('links.show'), product %></td>
         <td><%= link_to t('links.edit'), edit_product_path(product) %></td>
         <td><%= link_to t('links.delete'), product, method: :delete, data: { confirm: t('sure') } %></td>

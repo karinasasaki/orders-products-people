@@ -30,10 +30,24 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  order_detail:
+    edit: "Editing"
+    title: "Orders_Products table"
+
   order:
     edit: "Editing order"
     add: "Add product"
     remove: "Remove product"
+    details: "Order details"
+    new: "New order"
+
+  person:
+    new: "New person"
+    edit: "Editing person"
+
+  product:
+    new: "New product"
+    edit: "Editing product"
 
   welcome:
     title: "Welcome"
@@ -42,11 +56,14 @@ en:
 
   language: "English (International)"
   title: "Products"
+  error: "Prohibited from being saved"
+  total_value: "Total value"
 
   links: 
     edit: "Edit"
     show: "Show"
     delete: "Delete"
+    back: "Voltar"
 
   sure: "Are you sure?"
 
