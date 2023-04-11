@@ -15,9 +15,8 @@
 </p>
 
 <p>
-  <strong><%= Order.human_attribute_name(:id) %>: </strong>
-  <%= @person.products.pluck(:name).join(", ") %>
-  <%= @person.orders.pluck(:name) %>
+  <strong><%= Order.model_name.human(count: 2) %>: </strong>
+  <br>
 </p>
 
 <%= link_to t('links.edit'), edit_person_path(@person), class:"btn btn-primary"  %>
