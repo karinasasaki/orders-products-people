@@ -30,6 +30,7 @@
         person: Comprador(a)
         product_id: ID do produto
         person_id: ID da pessoa
+        order_details: Produto
       person:
         id: Código da pessoa
         name: Nome
