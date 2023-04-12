@@ -13,7 +13,7 @@
   </head>
 
   <body>
-    <div class="container-fluid">
+    <div class="container-fluid container">
       <ul class="nav justify-content-end">
         <li class="nav-item">
           <%= link_to "Português", root_path(locale: 'pt-BR'), class:"nav-link active" %>
@@ -25,5 +25,6 @@
 
       <%= yield %>
     </div>
+    <br>
   </body>
 </html>

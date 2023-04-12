@@ -37,7 +37,7 @@ en:
   order:
     edit: "Editing order"
     add: "Add product"
-    remove: "Remove product"
+    remove: "Remove"
     details: "Order details"
     new: "New order"
 

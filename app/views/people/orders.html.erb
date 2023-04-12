@@ -1,0 +1,9 @@
+<span style="color:green" ><%= notice %></span>
+
+<p>
+  <strong><%= Order.model_name.human(count: 2) %>: </strong>
+  <br>
+  <%= simple_format(@person.person_orders) %>
+</p>
+
+<%= link_to t('links.back'), people_path, class:"btn btn-outline-primary" %>

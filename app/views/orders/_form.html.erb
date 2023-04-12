@@ -11,27 +11,31 @@
     </div>
   <% end %>
 
-  <div class="mb-3">
+  <div class="col-9">
     <%= form.label :name %>
     <%= form.text_field :name, class:"form-control" %>
   </div>
 
-  <div class="field">
+  <br>
+
+  <div class="col-9">
     <%= form.label :person %>
-    <%= form.collection_select(:person_id, @set_person_options, :id, :name) %>
+    <%= form.collection_select(:person_id, @set_person_options, :id, :name, {include_blank: false}, {class: "form-select"}) %>
   </div>
 
   <div id='order_details'>
     <%= form.fields_for :order_details do |order_details_form|%>
       <%= render 'order_detail_fields', f: order_details_form %>
     <% end %>
-
-    <div class='links'>
-      <%= link_to_add_association t('order.add'), form, :order_details %>
-    </div>
   </div>
 
-  <div class="actions">
-    <%= form.submit nil, class:"btn btn-primary" %>
+  <div class='links'>
+    <br>
+    <%= link_to_add_association t('order.add'), form, :order_details, class:"btn btn-outline-success"%>
   </div>
+
+  <br> 
+
+  <%= form.submit nil, class:"btn btn-primary" %>
+  <%= link_to t('links.back'), orders_path, class:"btn btn-outline-primary"  %>
 <% end %>

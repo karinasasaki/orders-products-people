@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   resources :order_details
   resources :orders
   resources :people
+
   get 'welcome/index' 
   #get '/', to 'welcome#index' #get 'rota', to 'controller/action'
   root to: 'welcome#index'

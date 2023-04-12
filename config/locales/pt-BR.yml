@@ -6,7 +6,7 @@ pt-BR:
   order:
     edit: "Editando pedido"
     add: "Adicionar produto"
-    remove: "Remover produto"
+    remove: "Remover"
     details: "Detalhes do pedido"
     new: "Novo pedido"
 

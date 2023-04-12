@@ -24,9 +24,9 @@
         <td><%= order.person.name %></td>
         <td><%= order.products.pluck(:name)[0..2].join(', ') %></td>
         <td>R$ <%= order.total_value %></td>
-        <td><%= link_to t('links.show'), order %></td>
-        <td><%= link_to t('links.edit'), edit_order_path(order) %></td>
-        <td><%= link_to t('links.delete'), order, method: :delete, data: { confirm: t('sure') } %></td>
+        <td class="col-1"><%= link_to t('links.show'), order, class: "btn btn-light btn-sm" %></td>
+        <td class="col-1"><%= link_to t('links.edit'), edit_order_path(order), class: "btn btn-light btn-sm" %></td>
+        <td class="col-1"><%= link_to t('links.delete'), order, method: :delete, data: { confirm: t('sure') }, class: "btn btn-light btn-sm" %></td>
       </tr>
     <% end %>
   </tbody>

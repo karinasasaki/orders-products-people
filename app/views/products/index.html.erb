@@ -29,9 +29,9 @@
         <td><%= product.id %></td>
         <td><%= product.name %></td>
         <td>R$ <%= product.price %></td>
-        <td><%= link_to t('links.show'), product %></td>
-        <td><%= link_to t('links.edit'), edit_product_path(product) %></td>
-        <td><%= link_to t('links.delete'), product, method: :delete, data: { confirm: t('sure') } %></td>
+        <td class="col-1"><%= link_to t('links.show'), product, class: "btn btn-light btn-sm" %></td>
+        <td class="col-1"><%= link_to t('links.edit'), edit_product_path(product), class: "btn btn-light btn-sm" %></td>
+        <td class="col-1"><%= link_to t('links.delete'), product, method: :delete, data: { confirm: t('sure') }, class: "btn btn-light btn-sm" %></td>
       </tr>
     <% end %>
   </tbody>

@@ -1,7 +1,6 @@
 <span id="notice" style="color:green"><%= notice %></span>
 
-<h1><h1><%= Person.model_name.human(count: 2) %></h1>
-</h1>
+<h1><%= Person.model_name.human(count: 2) %></h1>
 
 <table class="table table-hover">
   <thead>
@@ -15,9 +14,9 @@
     <% @people.each do |person| %>
       <tr>
         <td><%= person.name %></td>
-        <td><%= link_to t('links.show'), person %></td>
-        <td><%= link_to t('links.edit'), edit_person_path(person) %></td>
-        <td><%= link_to t('links.delete'), person, method: :delete, data: { confirm: t('sure') } %></td>
+        <td class="col-1"><%= link_to t('links.show'), person, class: "btn btn-light btn-sm" %></td>
+        <td class="col-1"><%= link_to t('links.edit'), edit_person_path(person), class: "btn btn-light btn-sm" %></td>
+        <td class="col-1"><%= link_to t('links.delete'), person, method: :delete, data: { confirm: t('sure') }, class: "btn btn-light btn-sm" %></td>
       </tr>
     <% end %>
   </tbody>

@@ -14,11 +14,15 @@
   <%= datahora_br(@person.updated_at) %>
 </p>
 
+<hr class="my-4">
+
 <p>
   <strong><%= Order.model_name.human(count: 2) %>: </strong>
   <br>
   <%= simple_format(@person.person_orders) %>
 </p>
+
+<br>
 
 <%= link_to t('links.edit'), edit_person_path(@person), class:"btn btn-primary"  %>
 <%= link_to t('links.back'), people_path, class:"btn btn-outline-primary"   %>
