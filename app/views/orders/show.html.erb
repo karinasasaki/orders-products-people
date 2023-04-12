@@ -17,12 +17,12 @@
   <br>
   <strong><%= Order.human_attribute_name(:person) %>: </strong>
   <%= @order.person.name %>
+  <br><br>
+  <strong><%= t('total_value') %>: </strong>
+  <%= "R$ #{@order.total_value}"  %>
   <br>
   <strong><%= Order.human_attribute_name(:products) %>: </strong>
-  <%= @order.products.pluck(:quantity, :name).join(', ') %>
-  <br>
-  <strong><%= t('total_value') %>: </strong>
-  <%# total_value %>
+  <%= simple_format(@order.purchased_products) %>
 </p>
 
 <%= link_to t('links.edit'), edit_order_path(@order), class:"btn btn-primary"  %>

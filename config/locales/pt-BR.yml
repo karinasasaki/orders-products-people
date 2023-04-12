@@ -11,8 +11,8 @@ pt-BR:
     new: "Novo pedido"
 
   person:
-    new: "Nova pessoa"
-    edit: "Editando pessoa"
+    new: "Novo cliente"
+    edit: "Editando cliente"
 
   product:
     new: "Novo produto"
@@ -40,7 +40,7 @@ pt-BR:
   new:
     order: "Novo pedido"
     product: "Novo produto"
-    person: "Nova pessoa"
+    person: "Novo cliente"
 
   notice:
     order:

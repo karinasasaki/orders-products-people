@@ -9,13 +9,23 @@ class Order < ApplicationRecord
   validates :name, :person, :order_details, presence: true
 
   def total_value
-      prices = products.pluck(:price)
-      quantities = products.pluck(:quantity)
-      i = 0; total_value = 0
-      until i == (prices.length)
-        total_value += (prices[i]*quantities[i])
-        i += 1
-      end
-      return total_value
+    prices = products.pluck(:price)
+    quantities = products.pluck(:quantity)
+    i = 0; total_value = 0
+    until i == (prices.length)
+      total_value += (prices[i]*quantities[i])
+      i += 1
+    end
+    return total_value
+  end
+
+  def purchased_products
+    i = 0; item = ""
+    products.each do |product|
+      item += "#{products.pluck(:quantity)[i]} x #{product.name} \n"
+      i += 1
+    end
+    puts item
+    return item
   end
 end

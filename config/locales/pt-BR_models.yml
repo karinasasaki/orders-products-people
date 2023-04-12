@@ -8,8 +8,8 @@
         one: Pedido
         other: Pedidos
       person:
-        one: Pessoa
-        other: Pessoas
+        one: Cliente
+        other: Clientes
       order_detail:
         one: Detalhe do pedido
         other: Detalhes dos pedidos
@@ -32,7 +32,7 @@
         person_id: ID da pessoa
         order_details: Produto
       person:
-        id: Código da pessoa
+        id: Código do(a) cliente
         name: Nome
         updated_at: Atualizado em
         created_at: Criado em

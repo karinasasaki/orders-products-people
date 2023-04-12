@@ -17,6 +17,7 @@
 <p>
   <strong><%= Order.model_name.human(count: 2) %>: </strong>
   <br>
+  <%= simple_format(@person.person_orders) %>
 </p>
 
 <%= link_to t('links.edit'), edit_person_path(@person), class:"btn btn-primary"  %>
