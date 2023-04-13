@@ -16,11 +16,39 @@
 
 <hr class="my-4">
 
-<p>
-  <strong><%= Order.model_name.human(count: 2) %>: </strong>
-  <br>
-  <%= simple_format(@person.person_orders) %>
-</p>
+<div class="row">
+  <div class="col">
+    <p>
+      <strong><%= Order.model_name.human(count: 2) %>: </strong>
+      <br>
+      <%= simple_format(@person.person_orders) %>
+    </p>
+  </div>
+
+  <div class="col">
+    <%= form_with(url: person_path, method: :get) do |f| %>
+      <%= f.label(:search) %>
+      <div class="row">
+        <div class="col-10">
+          <%= f.search_field(:search, value: params[:search], class:"form-control" ) %>
+        </div>
+        <div class="col-1">
+          <%= f.submit("Pesquisar", class:"btn btn-primary" ) %>
+        </div>
+      </div>
+    <% end %>
+    
+    <% @person.orders.each do |order| %>
+      <% product = order.products.find_by(name: params[:search]) %>
+      <% if params[:search] == "" %>
+        <% puts "Parametro está vazio #{product}" %>
+      <% else %>
+        <% puts "Parametro possui valor #{product}" %>
+        <p><%= link_to "Pedido ##{order.id}", order_path(order.id) %></p>
+      <% end %>
+    <% end %>
+  </div>
+</div>
 
 <br>
 
