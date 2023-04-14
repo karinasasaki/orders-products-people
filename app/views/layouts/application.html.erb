@@ -16,6 +16,9 @@
     <div class="container-fluid container">
       <ul class="nav justify-content-end">
         <li class="nav-item">
+          <%= link_to "Home", root_path, class:"nav-link active" %>
+        </li>
+        <li class="nav-item">
           <%= link_to "Português", request.params.merge(locale: 'pt-BR'), class:"nav-link active" %>
         </li>
         <li class="nav-item">

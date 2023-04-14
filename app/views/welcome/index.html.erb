@@ -4,9 +4,9 @@
   <hr class="my-4">
 
   <p><%= t('welcome.select') %>:</p>
-  <%= link_to "#{Order.model_name.human(count: 2)}",  orders_path, class:"btn btn-primary btn-sm", role:"button" %>
-  <%= link_to "#{Product.model_name.human(count: 2)}",  products_path, class:"btn btn-primary btn-sm", role:"button" %>
-  <%= link_to "#{Person.model_name.human(count: 2)}",  people_path, class:"btn btn-primary btn-sm", role:"button" %>
+  <%= link_to "#{Order.model_name.human(count: 2)}",  orders_path, class:"btn btn-primary", role:"button" %>
+  <%= link_to "#{Product.model_name.human(count: 2)}",  products_path, class:"btn btn-primary", role:"button" %>
+  <%= link_to "#{Person.model_name.human(count: 2)}",  people_path, class:"btn btn-primary", role:"button" %>
   <br><br>
-  <%= link_to "#{OrderDetail.model_name.human(count: 2)}",  order_details_path, class:"btn btn-primary btn-sm", role:"button" %>
+  <%= link_to "#{OrderDetail.model_name.human(count: 2)}",  order_details_path, class:"btn btn-outline-light", role:"button" %>
 </div>

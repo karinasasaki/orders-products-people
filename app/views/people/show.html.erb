@@ -14,45 +14,36 @@
   <%= datahora_br(@person.updated_at) %>
 </p>
 
+<%= link_to t('links.edit'), edit_person_path(@person), class:"btn btn-primary" %>
+
 <hr class="my-4">
 
-<div class="row">
-  <div class="col">
-    <p>
-      <strong><%= Order.model_name.human(count: 2) %>: </strong>
-      <br>
-
-      
-      <%@results.each do |order| %>
-      <%puts '=========RESULTS========='%>
-      <%puts order.name%>
-       <b>Código da compra:</b> <%= order.id %>
-       <b>Nome do pedido:</b> <%= order.name %>
-       <b>Criado em:</b> <%= order.created_at.strftime("%d/%m/%Y %H:%M") %>
-       <b>Produtos comprados:</b> <%= order.products.pluck(:name).join(", ") %>
-       <b>Valor total:</b> R$ <%= order.total_value %>
-      <%end%>
-    </p>
+<%= form_tag(person_path, method: :get) do %>
+  <h3><%= t('search.title') %></h3>
+  <div class="row">
+    <div class="col-9">
+      <%= search_field_tag :search, params[:search], placeholder: t('search.placeholder'), class:"form-control" %>
+    </div>
+    <div class="col-1">
+      <%= button_tag t('search.button'), class:"btn btn-outline-primary", name: nil%>
+    </div>
   </div>
-  <div class="col">
-    <%= form_tag(person_path, method: :get) do %>
-      <h2>Pesquisar</h2>
-      <div class="row">
-        <div class="col-10">
-          <%= search_field_tag :search, params[:search], placeholder: "Type", class:"form-control" %>
-        </div>
-        <div class="col-1">
-          <%= button_tag "Bus por produto", :class => 'btn btn-info glyphicon glyphicon-search', :name => nil%>
-        </div>
-      </div>
-    <% end %>
-    
-    
-  </div>
-  
-</div>
+<% end %>
 
 <br>
 
-<%= link_to t('links.edit'), edit_person_path(@person), class:"btn btn-primary"  %>
-<%= link_to t('links.back'), people_path, class:"btn btn-outline-primary"   %>
+<h4><%= Order.model_name.human(count: 2) %>: </h4>
+
+<%@results.each do |order| %>
+  <p>
+  <b><%= Order.human_attribute_name(:id) %>: </b><%= order.id %><br>
+  <b><%= Order.human_attribute_name(:name) %>: </b><%= order.name %><br>
+  <b><%= Order.human_attribute_name(:created_at) %>: </b><%= order.created_at.strftime("%d/%m/%Y %H:%M") %><br>
+  <b><%= Order.human_attribute_name(:products) %>: </b> <%= order.products.pluck(:name).join(", ") %><br>
+  <b><%= t('total_value') %>: </b> R$ <%= order.total_value %>
+  </p>
+<%end%>
+
+<br>
+
+<%= link_to t('links.back'), people_path, class:"btn btn-outline-primary" %>

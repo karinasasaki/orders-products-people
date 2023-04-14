@@ -59,11 +59,16 @@ en:
   error: "Prohibited from being saved"
   total_value: "Total value"
 
+  search:
+    title: "Search"
+    button: "Search"
+    placeholder: "Search for product"
+
   links: 
     edit: "Edit"
     show: "Show"
     delete: "Delete"
-    back: "Voltar"
+    back: "Back"
 
   sure: "Are you sure?"
 

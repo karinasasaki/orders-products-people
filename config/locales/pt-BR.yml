@@ -28,6 +28,10 @@ pt-BR:
   error: "Erro ao salvar"
   total_value: "Valor total"
 
+  search:
+    title: "Pesquisar"
+    button: "Buscar"
+    placeholder: "Pesquise por produto"
 
   links: 
     edit: "Editar"
