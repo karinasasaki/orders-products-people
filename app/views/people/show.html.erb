@@ -40,7 +40,8 @@
   <b><%= Order.human_attribute_name(:name) %>: </b><%= order.name %><br>
   <b><%= Order.human_attribute_name(:created_at) %>: </b><%= order.created_at.strftime("%d/%m/%Y %H:%M") %><br>
   <b><%= Order.human_attribute_name(:products) %>: </b> <%= order.products.pluck(:name).join(", ") %><br>
-  <b><%= t('total_value') %>: </b> R$ <%= order.total_value %>
+  <b><%= t('total_value') %>: </b> R$ <%= order.total_value %><br>
+  <%= link_to t('links.more'), order_path(order.id), class:"link-secondary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"%>
   </p>
 <%end%>
 

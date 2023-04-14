@@ -25,7 +25,6 @@ class Order < ApplicationRecord
       item += "#{products.pluck(:quantity)[i]} x #{product.name} \n"
       i += 1
     end
-    puts item
     return item
   end
 end
