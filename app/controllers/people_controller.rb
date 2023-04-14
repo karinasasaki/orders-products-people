@@ -1,13 +1,57 @@
 class PeopleController < ApplicationController
   before_action :set_person, only: %i[ show edit update destroy ]
+  before_action :search
 
   # GET /people or /people.json
   def index
     @people = Person.all
   end
+  def search
+    if params[:search].blank?
+      @results = Order.where(person_id: params[:id])
+    else
+      puts 'ENTROU NO SEARCH ============================================='
+      @parameter = params[:search]
+      @product = Product.where(name: @parameter)
+      @orders = Order.where(person_id: params[:id]) 
+      puts @orders
+      puts @product
+      puts 'product ID'
+      puts @product.ids
+      puts 'orders ID'
+      puts @orders.ids
+      @orders_details = OrderDetail.where(order_id: @orders.ids, product_id: @product.ids)
+      puts 'ordersDetails ID'
+      puts @orders_details.ids
+      @results = Order.joins(:products).where(products:{ id: @product.ids}).distinct
+      puts @results
+    end
+  end
 
   # GET /people/1 or /people/1.json
   def show
+    if params[:search].blank?
+      @results = Order.where(person_id: params[:id])
+
+    else
+      puts 'ENTROU NO SEARCH ============================================='
+      @parameter = params[:search]
+      @product = Product.where(name: @parameter)
+      @orders = Order.where(person_id: params[:id]) 
+      puts @orders
+      puts @product
+      puts 'product ID'
+      puts @product.ids
+      puts 'orders ID'
+      puts @orders.ids
+      @orders_details = OrderDetail.where(order_id: @orders.ids, product_id: @product.ids)
+      puts 'ordersDetails ID'
+      puts @orders_details.ids
+      @results = Order.joins(:products).where(products:{ id: @product.ids}).distinct
+      puts @results
+       
+    end
+    
   end
 
   # GET /people/new

@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :people
 
   get 'welcome/index' 
+  get '/people/:id', to: 'peoples#search', as: 'search'
   #get '/', to 'welcome#index' #get 'rota', to 'controller/action'
   root to: 'welcome#index'
   

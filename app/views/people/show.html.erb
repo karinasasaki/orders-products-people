@@ -21,33 +21,35 @@
     <p>
       <strong><%= Order.model_name.human(count: 2) %>: </strong>
       <br>
-      <%= simple_format(@person.person_orders) %>
+
+      
+      <%@results.each do |order| %>
+      <%puts '=========RESULTS========='%>
+      <%puts order.name%>
+       <b>Código da compra:</b> <%= order.id %>
+       <b>Nome do pedido:</b> <%= order.name %>
+       <b>Criado em:</b> <%= order.created_at.strftime("%d/%m/%Y %H:%M") %>
+       <b>Produtos comprados:</b> <%= order.products.pluck(:name).join(", ") %>
+       <b>Valor total:</b> R$ <%= order.total_value %>
+      <%end%>
     </p>
   </div>
-
   <div class="col">
-    <%= form_with(url: person_path, method: :get) do |f| %>
-      <%= f.label(:search) %>
+    <%= form_tag(person_path, method: :get) do %>
+      <h2>Pesquisar</h2>
       <div class="row">
         <div class="col-10">
-          <%= f.search_field(:search, value: params[:search], class:"form-control" ) %>
+          <%= search_field_tag :search, params[:search], placeholder: "Type", class:"form-control" %>
         </div>
         <div class="col-1">
-          <%= f.submit("Pesquisar", class:"btn btn-primary" ) %>
+          <%= button_tag "Bus por produto", :class => 'btn btn-info glyphicon glyphicon-search', :name => nil%>
         </div>
       </div>
     <% end %>
     
-    <% @person.orders.each do |order| %>
-      <% product = order.products.find_by(name: params[:search]) %>
-      <% if params[:search] == "" %>
-        <% puts "Parametro está vazio #{product}" %>
-      <% else %>
-        <% puts "Parametro possui valor #{product}" %>
-        <p><%= link_to "Pedido ##{order.id}", order_path(order.id) %></p>
-      <% end %>
-    <% end %>
+    
   </div>
+  
 </div>
 
 <br>
