@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :profiles
+  devise_for :admins
   resources :order_details
   resources :orders
   resources :people

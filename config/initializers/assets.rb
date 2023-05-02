@@ -11,15 +11,16 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in the app/assets
 # folder are already added.
-Rails.application.config.assets.precompile += %w( cable.js
+Rails.application.config.assets.precompile += %w( devise/sessions.jscable.js
                                                   order_details.js
                                                   orders.js
                                                   people.js
                                                   products.js
-                                                  welcome.js
+                                                  welcome.
                                                 )
 
-Rails.application.config.assets.precompile += %w( order_details.css
+Rails.application.config.assets.precompile += %w( devise/sessions.css
+                                                  order_details.css
                                                   orders.css
                                                   people.css
                                                   products.css
