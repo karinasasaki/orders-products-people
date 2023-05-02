@@ -1,6 +1,12 @@
 'pt-BR':
   activerecord:
     models:
+      admin:
+        one: Administrador
+        orther: Administradores
+      profile:
+        one: Perfil
+        other: Perfis
       product:
         one: Produto
         other: Produtos
@@ -14,6 +20,16 @@
         one: Detalhe do pedido
         other: Detalhes dos pedidos
     attributes:
+      admin:
+        id: Código
+        email: E-mail
+        updated_at: Atualizado em
+        created_at: Criado em
+      profile:
+        id: Código
+        email: E-mail
+        updated_at: Atualizado em
+        created_at: Criado em
       product:
         id: Código do produto
         name: Nome
