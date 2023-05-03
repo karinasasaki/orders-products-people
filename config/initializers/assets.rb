@@ -11,20 +11,28 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in the app/assets
 # folder are already added.
-Rails.application.config.assets.precompile += %w( devise/sessions.js
+Rails.application.config.assets.precompile += %w( 
+                                                  admins_backoffice/welcome.js
+                                                  devise/sessions.js
+                                                  devise/registrations.js
+                                                  userinstallss_backoffice/welcome.js
+                                                  site/welcome.js
                                                   cable.js
                                                   order_details.js
                                                   orders.js
                                                   people.js
                                                   products.js
-                                                  welcome.js
                                                 )
 
-Rails.application.config.assets.precompile += %w( devise/sessions.css
+Rails.application.config.assets.precompile += %w( 
+                                                  admins_backoffice/welcome.css
+                                                  devise/sessions.css
+                                                  devise/registrations.css
+                                                  userinstallss_backoffice/welcome.css
+                                                  site/welcome.css
                                                   order_details.css
                                                   orders.css
                                                   people.css
                                                   products.css
                                                   scaffolds.css
-                                                  welcome.css
                                                 )

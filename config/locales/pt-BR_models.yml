@@ -4,9 +4,9 @@
       admin:
         one: Administrador
         orther: Administradores
-      profile:
-        one: Perfil
-        other: Perfis
+      user:
+        one: Usuário
+        other: Usuários
       product:
         one: Produto
         other: Produtos
@@ -25,7 +25,7 @@
         email: E-mail
         updated_at: Atualizado em
         created_at: Criado em
-      profile:
+      user:
         id: Código
         email: E-mail
         updated_at: Atualizado em

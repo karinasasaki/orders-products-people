@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= "admins" %></title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    params[:controller], media: 'all', 'data-turbolinks-track': 'reload' %>
+
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag params[:controller], 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div class="container-fluid container">
+      <ul class="nav justify-content-end">
+        <li class="nav-item">
+          <%= link_to "Home", root_path, class:"nav-link active" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Português", request.params.merge(locale: 'pt-BR'), class:"nav-link active" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "English", request.params.merge(locale: 'en'), class:"nav-link active"  %>
+        </li>
+      </ul>
+
+      <%= yield %>
+    </div>
+    <br>
+  </body>
+</html>
