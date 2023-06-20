@@ -12,7 +12,14 @@ Rails.application.routes.draw do
   end
 
   devise_for :users
+  devise_scope :user do  
+    get '/users/sign_out' => 'devise/sessions#destroy'     
+  end
+  
   devise_for :admins
+  devise_scope :admin do  
+    get '/admins/sign_out' => 'devise/sessions#destroy'     
+  end
 
   resources :order_details
   resources :orders

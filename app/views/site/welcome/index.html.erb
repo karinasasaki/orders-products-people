@@ -10,3 +10,19 @@
   <br><br>
   <%= link_to "#{OrderDetail.model_name.human(count: 2)}",  order_details_path, class:"btn btn-outline-light", role:"button" %>
 </div>
+
+<% if user_signed_in? %>
+  <p>Usuário (<%= current_user.email %>) está logado.</p>
+  <p><%= link_to "Fazer logoff [Usuário]", destroy_user_session_path, method: :delete %></p>
+<% else %>
+  <p>Usuário não está logado.</p>
+  <p><%= link_to "Fazer login [Usuário]", users_backoffice_welcome_index_path %></p>
+<% end %>
+
+<% if admin_signed_in? %>
+  <p>Administrador (<%= current_admin.email %>) está logado.</p>
+  <p><%= link_to "Fazer logoff [Administrador]", destroy_admin_session_path, method: :delete %></p>
+<% else %>
+  <p>Administrador não está logado.</p>
+  <p><%= link_to "Fazer login [Administrador]", admins_backoffice_welcome_index_path %></p>
+<% end %>
