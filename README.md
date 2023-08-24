@@ -1,24 +1,32 @@
-# README
+# CRUD de pedidos que contém produtos realizados por uma pessoa
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## DESAFIO PARTE 1
 
-Things you may want to cover:
+A tarefa consiste em definir três tabelas e suas regras de negócio através de model e migrations e realizar consultas com postgres através do pgadmin ou CLI.
 
-* Ruby version
+Criar:
 
-* System dependencies
+Uma tabela products (name, price, timestamps)
+Uma tabela orders (name="Compras da ", person_id, product_id, timestamps)
+Uma tabela people (name, timestamps)
 
-* Configuration
+Contexto:
+Pessoas farão orders para comprar/pedir um ou mais products. Logo, estes produtos pertencem a uma ou mais orders. A person estará vinculada a uma order também.
 
-* Database creation
+## DESAFIO PARTE 2
 
-* Database initialization
+Já conectado ao seu banco, você irá realizar as seguintes pesquisas - queries sql:
 
-* How to run the test suite
+Listar todas as pessoas (people).
+Listar todas os produtos (products.)
+Listar todas as compras com o nome da pessoa que a fez no qual uma determinada pessoa 'Jose' fez parte.
+Listar todas as compras com o nome da pessoa que a fez no qual um determinado produto (product) com nome 'Arroz' faça parte.
 
-* Services (job queues, cache servers, search engines, etc.)
+## DESAFIO PARTE 3
 
-* Deployment instructions
+Adapte suas pesquisas para o ActiveRecord e construa as telas onde serão exibidos os dados das três primeiras queries da parte 2 do desafio.
 
-* ...
+Plus - Configure o Bootstrap na sua aplicação e separe as duas listagens por abas.
+
+Deverá ser criado um novo projeto rails na versão 5.2.0.
+Para realizar as tasks acima, você deverá ter seu database.yml configurado para o adaptador do postgres.
